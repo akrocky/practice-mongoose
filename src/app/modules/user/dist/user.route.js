@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var user_controller_1 = require("./user.controller");
+var router = express_1["default"].Router();
+router.get("/", user_controller_1.getUser);
+router.get("/admins", user_controller_1.getAdminUsers);
+router.get("/:id", user_controller_1.getUserById);
+router.post("/create-user", user_controller_1.createUser);
+exports["default"] = router;
